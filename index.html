@@ -9,7 +9,7 @@
 
 <div>
 <h4>Research results: </h4>
-<div id="cloud">
+<div id="cloud" width ="100%">
 
 </div>
 </div>
@@ -25,10 +25,10 @@ var cityData = [],
     width = 800, 
     height = 2000;
 
-d3.csv("output2.csv", function(data) {
+d3.csv("data.csv", function(data) {
     // build the list of city names
     data.forEach( function (d) {
-        cityData.push(d.word);
+        cityData.push(d.age);
     });
 
     d3.layout.cloud().size([800, 2000])
