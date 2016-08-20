@@ -17,10 +17,10 @@ var cityData = [],
     width = 500, 
     height = 500;
 
-d3.csv("us-cities.csv", function(data) {
+d3.csv("output.csv", function(data) {
     // build the list of city names
     data.forEach( function (d) {
-        cityData.push(d.place);
+        cityData.push(d.word);
     });
 
     d3.layout.cloud().size([250, 250])
