@@ -13,12 +13,10 @@
 
 var fill = d3.scale.category20();
 
-var width = 500;
-var height = 700;
 
 var cityData = [], 
-    width = 500, 
-    height = 500;
+    width = 800, 
+    height = 2000;
 
 d3.csv("output2.csv", function(data) {
     // build the list of city names
@@ -26,9 +24,9 @@ d3.csv("output2.csv", function(data) {
         cityData.push(d.word);
     });
 
-    d3.layout.cloud().size([400, 400])
+    d3.layout.cloud().size([800, 2000])
         .words(cityData.map(function(d) {
-            return {text: d, size: 10 + 50};
+            return {text: d, size: 10 + 30};
         }))
        // .rotate(function() { return ~~(Math.random() * 2) * 90; })
         .font("Impact")
