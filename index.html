@@ -13,6 +13,9 @@
 
 var fill = d3.scale.category20();
 
+var width = 500;
+var height = 700;
+
 var cityData = [], 
     width = 500, 
     height = 500;
@@ -40,7 +43,7 @@ d3.select("body").append("svg")
     .attr("width", 500)
     .attr("height", 500)
     .append("g")
-    .attr("transform", "translate(150,150)")
+    .attr("transform", "translate("+(width/2)+","+(height/2))+")")
     .selectAll("text")
     .data(words)
     .enter().append("text")
