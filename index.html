@@ -26,7 +26,7 @@ d3.csv("output2.csv", function(data) {
         cityData.push(d.word);
     });
 
-    d3.layout.cloud().size([500, 700])
+    d3.layout.cloud().size([100%, 2000])
         .words(cityData.map(function(d) {
             return {text: d, size: 10 + 50};
         }))
