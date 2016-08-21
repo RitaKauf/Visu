@@ -22,7 +22,7 @@ var fill = d3.scale.category20();
 
 
 var cityData = [], 
-    width = 500, 
+    width = "100%", 
     height = 500;
 
 d3.csv("output2.csv", function(data) {
@@ -31,24 +31,27 @@ d3.csv("output2.csv", function(data) {
         cityData.push(d.word);
     });
 
-    d3.layout.cloud().size([400, 400])
+ 
+
+});
+
+ var layout1 =   d3.layout.cloud().size([800, 800])
         .words(cityData.map(function(d) {
             return {text: d, size: 10 + 30};
         }))
        // .rotate(function() { return ~~(Math.random() * 2) * 90; })
         .font("Impact")
         .fontSize(function(d) { return d.size; })
-        .on("end", draw)
-        .start();
+        .on("end", draw);
 
-});
+        layout1.start();
 
 function draw(words) {
 d3.select("#cloud").append("svg")
-    .attr("width", 500)
-    .attr("height", 500)
+    .attr("width", layout1.size()[0])
+    .attr("height", layout1.size()[1])
     .append("g")
-    .attr("transform", "translate(400,400)")
+    .attr("transform", "translate(" + layout1.size()[0] / 2 + "," + layout1.size()[1] / 2+ ")")
     .selectAll("text")
     .data(words)
     .enter().append("text")
