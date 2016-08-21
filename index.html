@@ -25,10 +25,10 @@ var cityData = [],
     width = 800, 
     height = 2000;
 
-d3.csv("data.csv", function(data) {
+d3.csv("output2.csv", function(data) {
     // build the list of city names
     data.forEach( function (d) {
-        cityData.push(d.country);
+        cityData.push(d.word);
     });
 
     d3.layout.cloud().size([800, 2000])
