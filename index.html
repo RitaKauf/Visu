@@ -80,7 +80,7 @@ for (var i=0; i < cityData.length; i++)  {
 
 var wordsAmericanExpert = buildWords(asiaNonExpert); 
 
-    d3.layout.cloud().size([1000, 1000])
+    d3.layout.cloud().size([500, 500])
         .words(wordsAmericanExpert.map(function(d) {
             return {text: d, size: asiaNonExpert[d]*20};
         }))
